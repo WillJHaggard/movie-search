@@ -1,11 +1,12 @@
 import React, { Children } from "react";
+import AnimatedItems from "../scenes/SearchPage/AnimatedItems";
 //import no_available_poster from "../../no_available_poster.svg";
 
 const TableView = ({
   feedback,
   viewing,
-  items,
   selectItem,
+  items,
 }) => (
   <main
     style={{
@@ -38,39 +39,12 @@ const TableView = ({
               ? `${items.length} Results`
               : `${items.length} Result`}
           </span>
-          {Children.toArray(
-            items.map((item, i) => (
-              <article
-                className="dt w-100 bb b--black-05 pb2 mt2"
-                href="#0"
-              >
-                <div className="dtc w2 w3-ns v-mid">
-                  <img
-                    src={item.Poster}
-                    className="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"
-                  />
-                </div>
-                <div className="dtc v-mid pl3">
-                  <h1 className="f6 f5-ns fw6 lh-title black mv0">
-                    {item.Title}{" "}
-                  </h1>
-                  <h2 className="f6 fw4 mt0 mb0 black-60">
-                    {item.Year}
-                  </h2>
-                </div>
-                <div className="dtc v-mid">
-                  <form className="w-100 tr">
-                    <button
-                      className="f6 ui-button-select"
-                      type="submit"
-                    >
-                      View
-                    </button>
-                  </form>
-                </div>
-              </article>
-            ))
-          )}
+          <AnimatedItems
+            render={({ animatedItems, cb }) =>
+              Boolean(animatedItems.length) &&
+              Children.toArray(animatedItems.map(cb))
+            }
+          />
         </div>
       )
     )}
