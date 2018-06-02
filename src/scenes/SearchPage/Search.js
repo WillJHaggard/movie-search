@@ -1,7 +1,20 @@
+// External Deps
 import React, { Component, Children } from "react";
 import { push } from "react-router-redux";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+// Internal Deps
+import {
+  getItems,
+  getViewing,
+  getFeedback,
+} from "../../services/search/selectors";
+import {
+  clearResults,
+  selectItem,
+  handleSubmit,
+  cancelSearch,
+} from "../../services/search/actions";
 import {
   Form,
   LoaderBar,
@@ -9,14 +22,11 @@ import {
   StripedHero,
 } from "../../components";
 
-import {
-  clearResults,
-  selectItem,
-  handleSubmit,
-  cancelSearch,
-} from "../../modules/search";
-
 class Search extends Component {
+  /**
+    Controlled state can live here and we
+    can take a snapshot of it per form submission
+  */
   state = { controlledQuery: "" };
 
   handleChangeQuery = query =>
@@ -43,9 +53,9 @@ class Search extends Component {
 }
 
 const mapStateToProps = (state, props) => ({
-  items: state.search.items,
-  viewing: state.search.viewing,
-  feedback: state.search.feedback,
+  items: getItems(state),
+  viewing: getViewing(state),
+  feedback: getFeedback(state),
   ...props,
 });
 

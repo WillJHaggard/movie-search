@@ -1,3 +1,5 @@
 import React from "react";
 
-export default () => null;
+const MoviePage = () => null;
+
+export default MoviePage;

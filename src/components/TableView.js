@@ -1,5 +1,5 @@
-import React from "react";
-import no_available_poster from "../../no_available_poster.svg";
+import React, { Children } from "react";
+//import no_available_poster from "../../no_available_poster.svg";
 
 const TableView = ({
   feedback,
@@ -46,7 +46,7 @@ const TableView = ({
               >
                 <div className="dtc w2 w3-ns v-mid">
                   <img
-                    src={item.Poster || no_available_poster}
+                    src={item.Poster}
                     className="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"
                   />
                 </div>

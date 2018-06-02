@@ -1,7 +1,9 @@
 import React from "react";
 
-export default () => (
+const LoaderBar = () => (
   <div className="loader-bar">
     <div className="bar" />
   </div>
 );
+
+export default LoaderBar;

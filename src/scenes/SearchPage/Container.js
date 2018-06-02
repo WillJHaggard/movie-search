@@ -2,10 +2,10 @@ import React from "react";
 import Search from "./Search";
 import { Header, Footer } from "../../components";
 
-const HomePage = () => (
+const SearchPage = () => (
   <div>
     <div style={{ minHeight: "calc(130vh - 270px)" }}>
-      <Navigation />
+      <Header />
       <Search />
     </div>
     <div>
@@ -14,4 +14,4 @@ const HomePage = () => (
   </div>
 );
 
-export default HomePage;
+export default SearchPage;

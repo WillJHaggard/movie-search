@@ -3,7 +3,7 @@ import React from "react";
 let scrollToTop = () =>
   (document.documentElement.scrollTop = 0);
 
-export default () => (
+const Footer = () => (
   <footer className="ui-footer">
     <div className="ui-footer-container">
       <div className="ui-footer-copy">
@@ -25,3 +25,5 @@ export default () => (
     </div>
   </footer>
 );
+
+export default Footer;

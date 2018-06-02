@@ -1,4 +1,5 @@
 import React from "react";
+import LoaderBar from "./LoaderBar";
 
 const Form = ({
   controlledQuery: query,

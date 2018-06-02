@@ -1,6 +1,6 @@
 import React from "react";
 
-export default () => (
+const Header = () => (
   <div
     style={{
       padding: 0,
@@ -20,8 +20,10 @@ export default () => (
           lineHeight: "50px",
         }}
       >
-        AVOXI Movie Search
+        Movie Search
       </h1>
     </nav>
   </div>
 );
+
+export default Header;
