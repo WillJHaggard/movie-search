@@ -34,13 +34,16 @@ const TableView = ({
     ) : (
       viewing === "gallery" && (
         <div>
-          <span className="ui-button-clear">
+          <span className="ui-button-results">
             {items.length > 1
               ? `${items.length} Results`
               : `${items.length} Result`}
           </span>
           <AnimatedItems
-            render={({ animatedItems, cb }) =>
+            render={({
+              animatedItems = [],
+              cb = () => null,
+            }) =>
               Boolean(animatedItems.length) &&
               Children.toArray(animatedItems.map(cb))
             }

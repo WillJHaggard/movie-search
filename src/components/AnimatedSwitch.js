@@ -34,7 +34,7 @@ class AnimatedSwitch extends Switch {
     Animated.spring(this.state.animate, {
       toValue: 0,
     }).start();
-    setTimeout(() => cb(), 175);
+    setTimeout(() => cb(), 100);
   }
   render() {
     const style = {

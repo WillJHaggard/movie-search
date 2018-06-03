@@ -9,8 +9,9 @@ import TransitionGroup from "react-transition-group/TransitionGroup";
 // Internal Deps
 import store, { history } from "./store";
 import { AnimatedSwitch } from "./components";
+import TopOf from "./utils/TopOf";
 import SearchPage from "./scenes/SearchPage/Container";
-
+import MoviePage from "./scenes/MoviePage/Container";
 // CSS
 import "sanitize.css/sanitize.css";
 import "./index.css";
@@ -31,7 +32,12 @@ const Root = (
               <Route
                 exact
                 path="/"
-                component={SearchPage}
+                render={() => <TopOf comp={SearchPage} />}
+              />
+              <Route
+                exact
+                path="/movie/:imdbID"
+                render={() => <TopOf comp={MoviePage} />}
               />
             </AnimatedSwitch>
           </TransitionGroup>

@@ -63,7 +63,6 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       clearResults,
-      selectItem,
       cancelSearch,
       handleSubmit,
     },

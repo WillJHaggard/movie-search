@@ -1,23 +1,21 @@
 import React from "react";
+import smoothScroll from "../utils/smoothScroll";
 
-let scrollToTop = () =>
-  (document.documentElement.scrollTop = 0);
-
-const Footer = () => (
+const Footer = ({ content: { subtitle, title } }) => (
   <footer className="ui-footer">
     <div className="ui-footer-container">
       <div className="ui-footer-copy">
         <h1 className="ui-footer-title">
           <span className="ui-footer-subtitle">
-            Didn't find what you were looking for?
+            {subtitle}
           </span>
-          Try another search.
+          {title}
         </h1>
       </div>
       <div className="ui-footer-up">
         <span
           className="ui-footer-up-arrow"
-          onClick={scrollToTop}
+          onClick={() => smoothScroll()}
         >
           &#8593;
         </span>

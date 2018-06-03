@@ -19,10 +19,9 @@ const Form = ({
       <div className="ui-button-clear-container">
         <span
           tabIndex="1"
-          onClick={() => {
-            // clearResults();
-            clearQuery();
-          }}
+          onClick={() =>
+            Boolean(query.length) ? clearQuery() : null
+          }
           className="ui-button-clear"
         >
           Clear

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { push } from "react-router-redux";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import * as Animated from "animated/lib/targets/react-dom";
-
+import { bindActionCreators } from "redux";
+import { Image } from "../../components";
+import { requestItemDetails } from "../../services/search/actions";
 import { getItems } from "../../services/search/selectors";
 
 class AnimatedItems extends Component {
@@ -62,9 +64,10 @@ class AnimatedItems extends Component {
           key={`0.${i}`}
         >
           <div className="dtc w2 w3-ns v-mid">
-            <img
+            <Image
               src={item.Poster}
               className="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"
+              alt={`${item.Title}`}
             />
           </div>
           <div className="dtc v-mid pl3">
@@ -76,17 +79,21 @@ class AnimatedItems extends Component {
             </h2>
           </div>
           <div className="dtc v-mid">
-            <form
-              className="w-100 tr"
-              onSubmit={() => push(`/movie/${item.imdbID}`)}
-            >
-              <button
-                className="f6 ui-button-select"
-                type="submit"
+            <div className="w-100 tr">
+              <Link
+                style={{ cursor: "default" }}
+                to={`/movie/${item.imdbID}`}
               >
-                View
-              </button>
-            </form>
+                <button
+                  className="f6 ui-button-select"
+                  onClick={() =>
+                    this.props.requestItemDetails(item)
+                  }
+                >
+                  View
+                </button>
+              </Link>
+            </div>
           </div>
         </article>
       </Animated.div>
@@ -110,6 +117,14 @@ const mapStateToProps = (state, props) => ({
   items: getItems(state),
 });
 
-export default connect(mapStateToProps, null)(
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      requestItemDetails,
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(
   AnimatedItems
 );

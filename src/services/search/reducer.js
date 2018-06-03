@@ -7,9 +7,16 @@ const initialState = {
     error: "Oops, try a new search.",
     start: "Search",
   },
+  lastID: "",
   lastQuery: "",
   items: [],
-  item: {},
+  item: {
+    Title: null,
+    Year: null,
+    imdbID: null,
+    Type: "movie",
+    Poster: "",
+  },
 };
 
 export default (state = initialState, action) => {
@@ -37,20 +44,22 @@ export default (state = initialState, action) => {
       return { ...state, ...initialState };
     case types.ERROR_SEARCH:
       return { ...state, viewing: "error" };
-    case types.UPDATE_ITEMS:
-      if (action.payload.items) {
-        return { ...state, items: action.payload.items };
-      }
+
+    case types.REQUEST_ITEM_DETAILS:
+      return {
+        ...state,
+        item: { ...state.item, ...action.payload.item },
+        viewing: "loading",
+      };
+    case types.RECEIVE_ITEM_DETAILS:
+      return {
+        ...state,
+        item: { ...state.item, ...action.payload.item },
+        viewing: "movie",
+      };
+    case types.ERROR_ITEM_DETAILS:
       return state;
-    case types.SELECT_ITEM:
-      if (action.payload.item) {
-        return {
-          ...state,
-          viewing: "movie",
-          item: action.payload.item,
-        };
-      }
-      return state;
+
     case types.ESCAPE_ITEM:
       return {
         ...state,

@@ -1,14 +1,10 @@
+import { push } from "react-router-redux";
 import {
-  SELECT_ITEM,
+  REQUEST_ITEM_DETAILS,
   CANCEL_SEARCH,
   CLEAR_RESULTS,
   REQUEST_SEARCH,
 } from "./action-types";
-
-export const selectItem = item => ({
-  type: SELECT_ITEM,
-  payload: { item },
-});
 
 export const cancelSearch = () => ({ type: CANCEL_SEARCH });
 
@@ -26,3 +22,11 @@ export const handleSubmit = (e, query) => {
     },
   };
 };
+
+export const requestItemDetails = item => ({
+  type: REQUEST_ITEM_DETAILS,
+  payload: {
+    item,
+    viewing: "loading",
+  },
+});

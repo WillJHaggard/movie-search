@@ -1,0 +1,114 @@
+.imdb-button {
+  margin: 10px;
+  color: #3a3a3a;
+  background: linear-gradient(
+    90deg,
+    rgba(235, 218, 143, 1),
+    rgba(242, 180, 24, 1)
+  );
+  white-space: nowrap;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 3rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ui-showcase-container {
+  transition: all 0.3s cubic-bezier(0.2, 0, 0.4, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 170px;
+}
+
+.ui-showcase {
+  display: block;
+  margin-bottom: 2rem;
+  margin-top: 7.225rem;
+}
+
+.ui-showcase-content {
+  flex: 1 0 50%;
+  margin-right: 0rem;
+  margin-left: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.ui-showcase-title {
+  max-width: 500px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-weight: 300;
+  font-size: 45px;
+  line-height: 55px;
+  color: #3a3a3a;
+  letter-spacing: -0.01em;
+}
+
+.ui-showcase-body {
+  font-weight: 400;
+  margin-bottom: 30px;
+  font-size: 19px;
+  line-height: 32px;
+  color: #3a3a3a;
+}
+
+.floating-poster {
+  flex: 1 0 50%;
+  cursor: default;
+  user-select: none;
+}
+
+/* .floating-poster div {
+  position: absolute;
+  flex-shrink: 0;
+  border-radius: 8px;
+} */
+.poster {
+  margin-right: 0rem;
+  overflow: hidden;
+  height: auto;
+  width: 300px;
+  right: 36%;
+  border-radius: 4px;
+  box-shadow: -17.1px 62.5px 125px -23px rgba(50, 50, 93, 0.5),
+    -6.2px 37.5px 75px -37.5px rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 670px) {
+  .ui-showcase-title {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  .ui-showcase {
+    display: flex;
+  }
+}
+
+.poster {
+  overflow: hidden;
+  height: auto;
+  width: 300px;
+  right: 0%;
+  border-radius: 4px;
+
+  box-shadow: -17.1px 62.5px 125px -23px rgba(50, 50, 93, 0.5),
+    -6.2px 37.5px 75px -37.5px rgba(0, 0, 0, 0.3);
+}
+.deep-shadow {
+  box-shadow: -17.1px 62.5px 125px -23px rgba(50, 50, 93, 0.5),
+    -6.2px 37.5px 75px -37.5px rgba(0, 0, 0, 0.3);
+}
