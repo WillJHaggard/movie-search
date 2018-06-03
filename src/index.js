@@ -1,9 +1,8 @@
 // External Deps
 import React from "react";
 import { render } from "react-dom";
-
 import { Provider } from "react-redux";
-import { Route, matchPath } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { ConnectedRouter } from "react-router-redux";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 // Internal Deps
@@ -12,7 +11,8 @@ import AnimatedSwitch from "./containers/AnimatedSwitch";
 import TopOf from "./utils/TopOf";
 import SearchPage from "./scenes/SearchPage/Container";
 import MoviePage from "./scenes/MoviePage/Container";
-// CSS
+
+// Global CSS
 import "sanitize.css/sanitize.css";
 import "./global.scss";
 

@@ -1,4 +1,5 @@
 import React from "react";
+import * as PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import * as Animated from "animated/lib/targets/react-dom";
 import NavigationLink from "../NavigationLink";
@@ -6,7 +7,7 @@ import styles from "./styles.scss";
 
 const Header = ({
   location: { pathname },
-  goBackStyle = {},
+  goBackStyle,
   content: { title },
 }) => (
   <div className={styles.header_container}>
@@ -32,5 +33,23 @@ const Header = ({
     </nav>
   </div>
 );
+
+Header.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }),
+  content: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+  }),
+  goBackStyle: PropTypes.object,
+};
+
+Header.defaultProps = {
+  location: {
+    pathname: "",
+  },
+  content: { title: "Movie Search" },
+  goBackStyle: {},
+};
 
 export default withRouter(Header);

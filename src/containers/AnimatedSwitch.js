@@ -1,9 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
+import * as PropTypes from "prop-types";
 import { Switch } from "react-router-dom";
 import * as Animated from "animated/lib/targets/react-dom";
-import TransitionGroup from "react-transition-group/TransitionGroup";
 
 class AnimatedSwitch extends Switch {
+  static propTypes = {
+    location: PropTypes.object.isRequired,
+    key: PropTypes.number.isRequired,
+  };
+
+  static defaultProps = {
+    location: {},
+    key: 0,
+  };
+
   constructor(props) {
     super(props);
     this.state = {

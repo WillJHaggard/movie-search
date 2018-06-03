@@ -1,4 +1,3 @@
-import { push } from "react-router-redux";
 import {
   SEARCH_CANCEL,
   CLEAR_RESULTS,

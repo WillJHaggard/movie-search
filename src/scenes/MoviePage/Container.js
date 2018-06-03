@@ -23,13 +23,12 @@ class MoviePage extends Component {
 
   static propTypes = {
     item: PropTypes.object.isRequired,
+    viewing: PropTypes.string.isRequired,
   };
 
   state = { animate: new Animated.Value(0) };
 
   componentDidMount() {
-    const { item } = this.props;
-
     setTimeout(
       () =>
         Animated.spring(this.state.animate, {

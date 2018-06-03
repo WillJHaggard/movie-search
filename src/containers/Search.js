@@ -1,6 +1,6 @@
 // External Deps
-import React, { Component, Children } from "react";
-import { push } from "react-router-redux";
+import React, { Component } from "react";
+import * as PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 // Internal Deps
@@ -11,18 +11,30 @@ import {
 } from "../services/gallery/selectors";
 import {
   clearResults,
-  selectItem,
   handleSubmit,
   cancelSearch,
 } from "../services/gallery/actions";
 import {
   Form,
-  LoaderBar,
   TableView,
   StripedHero,
 } from "../components";
 
 class Search extends Component {
+  static propTypes = {
+    items: PropTypes.array.isRequired,
+    viewing: PropTypes.string.isRequired,
+    feedback: PropTypes.object.isRequired,
+    clearResults: PropTypes.func.isRequired,
+    cancelSearch: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    items: [],
+    viewing: "",
+    feedback: {},
+  };
   /**
     Controlled state can live here and we
     can take a snapshot of it per form submission
@@ -59,7 +71,6 @@ const mapStateToProps = (state, props) => ({
   items: getItems(state),
   viewing: getViewing(state),
   feedback: getFeedback(state),
-  ...props,
 });
 
 const mapDispatchToProps = dispatch =>

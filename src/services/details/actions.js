@@ -1,4 +1,3 @@
-import { push } from "react-router-redux";
 import { DETAILS } from "./action-types";
 
 export const requestDetails = item => ({

@@ -1,4 +1,5 @@
 import React from "react";
+import * as PropTypes from "prop-types";
 import LoaderBar from "../LoaderBar";
 import styles from "./styles.scss";
 
@@ -65,5 +66,22 @@ const Form = ({
     </form>
   </div>
 );
+
+Form.defaultProps = {
+  controlledQuery: "",
+  viewing: "",
+  feedback: {},
+};
+
+Form.propTypes = {
+  controlledQuery: PropTypes.string.isRequired,
+  viewing: PropTypes.string.isRequired,
+  feedback: PropTypes.object,
+  handleChangeQuery: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  clearQuery: PropTypes.func.isRequired,
+  clearResults: PropTypes.func.isRequired,
+  cancelSearch: PropTypes.func.isRequired,
+};
 
 export default Form;

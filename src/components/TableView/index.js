@@ -1,4 +1,5 @@
 import React, { Children } from "react";
+import * as PropTypes from "prop-types";
 import AnimatedItems from "../../containers/AnimatedItems";
 import styles from "./styles.scss";
 
@@ -45,5 +46,18 @@ const TableView = ({
     )}
   </main>
 );
+
+TableView.defaultProps = {
+  feedback: {},
+  viewing: "",
+  items: [],
+};
+
+TableView.propTypes = {
+  feedback: PropTypes.object.isRequired,
+  viewing: PropTypes.string.isRequired,
+  selectItem: PropTypes.func.isRequired,
+  items: PropTypes.array.isRequired,
+};
 
 export default TableView;

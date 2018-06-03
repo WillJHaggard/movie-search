@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { string, object } from "prop-types";
+import React from "react";
+import * as PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styles from "./styles.scss";
 
@@ -9,7 +9,7 @@ const NavigationLink = ({
   text,
   style,
   className,
-  cb = null,
+  cb,
 }) => {
   return route === to ? (
     <span {...{ style, className }}>{text}</span>
@@ -26,11 +26,13 @@ NavigationLink.defaultProps = {
   text: "Link Text",
   className: styles.anchor_reset,
   style: {},
+  cb: () => null,
 };
 
 NavigationLink.propTypes = {
-  route: string.isRequired,
-  to: string.isRequired,
+  route: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  cb: PropTypes.func.isRequired,
 };
 
 export default NavigationLink;

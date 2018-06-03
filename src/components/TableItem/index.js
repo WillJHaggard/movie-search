@@ -1,4 +1,5 @@
 import React from "react";
+import * as PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { NavigationLink } from "../index";
 import Image from "../../containers/Image";
@@ -43,5 +44,32 @@ const TableItem = ({
     </div>
   </article>
 );
+
+TableItem.defaultProps = {
+  location: { pathname: "" },
+  item: {
+    Poster: "",
+    Title: "",
+    Year: "",
+    imdbID: "",
+  },
+  index: 0,
+  displayText: "View",
+};
+
+TableItem.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }),
+  item: PropTypes.shape({
+    Poster: PropTypes.string.isRequired,
+    Title: PropTypes.string.isRequired,
+    Year: PropTypes.string.isRequired,
+    imdbID: PropTypes.string.isRequired,
+  }),
+  index: PropTypes.number.isRequired,
+  displayText: PropTypes.string.isRequired,
+  requestDetails: PropTypes.func.isRequired,
+};
 
 export default withRouter(TableItem);

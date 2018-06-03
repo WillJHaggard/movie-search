@@ -1,8 +1,7 @@
 import { get } from "axios";
 import { takeEvery, call, put } from "redux-saga/effects";
 import { API_KEY } from "../../constants";
-
-import { SEARCH, SEARCH_ERROR } from "./action-types";
+import { SEARCH } from "./action-types";
 
 function* callRequestSearch({
   payload: { lastQuery: query = "" },

@@ -1,14 +1,15 @@
 import React from "react";
+import * as PropTypes from "prop-types";
 import Image from "../../containers/Image";
 import styles from "./styles.scss";
 
 const Showcase = ({
   item: {
-    Poster: src = "",
+    Poster: src,
     Title: title,
     Year: year,
     imdbID: id,
-    Runtime: runtime = "",
+    Runtime: runtime,
   },
 }) => (
   <div className={styles.showcase_container}>
@@ -36,5 +37,25 @@ const Showcase = ({
     </div>
   </div>
 );
+
+Showcase.defaultProps = {
+  item: {
+    Poster: "",
+    Title: "",
+    Year: "",
+    imdbID: "",
+    Runtime: "",
+  },
+};
+
+Showcase.propTypes = {
+  item: PropTypes.shape({
+    Poster: PropTypes.string.isRequired,
+    Title: PropTypes.string.isRequired,
+    Year: PropTypes.string.isRequired,
+    imdbID: PropTypes.string.isRequired,
+    Runtime: PropTypes.string.isRequired,
+  }),
+};
 
 export default Showcase;

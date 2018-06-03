@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import * as PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import * as Animated from "animated/lib/targets/react-dom";
 import { bindActionCreators } from "redux";
-import { Image, TableItem } from "../components";
+import { TableItem } from "../components";
 import { requestDetails } from "../services/details/actions";
 import { getItems } from "../services/gallery/selectors";
 
@@ -72,7 +72,7 @@ class AnimatedItems extends Component {
   };
 
   render() {
-    const { render, items } = this.props;
+    const { render } = this.props;
     return (
       <TransitionGroup component="ul">
         {render({
@@ -83,6 +83,15 @@ class AnimatedItems extends Component {
     );
   }
 }
+
+AnimatedItems.defaultProps = {
+  items: [],
+};
+
+AnimatedItems.propTypes = {
+  items: PropTypes.array.isRequired,
+  requestDetails: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state, props) => ({
   items: getItems(state),
