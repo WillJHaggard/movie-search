@@ -1,13 +1,30 @@
 import React from "react";
+import * as PropTypes from "prop-types";
 
-const StripedHero = ({ els, viewing }) => (
+const StripedHero = ({ type, els, viewing }) => (
   <header>
-    <div data-state={viewing} className="stripes">
-      {els.map((_, i) => (
-        <span data-state={viewing} key={`0.${i}`} />
-      ))}
+    <div
+      className={
+        type === "search"
+          ? "search-stripes"
+          : "movie-stripes"
+      }
+    >
+      {els.map((_, i) => <span key={`0.${i}`} />)}
     </div>
   </header>
 );
+
+StripedHero.defaultProps = {
+  type: "search",
+  els: [],
+  viewing: "",
+};
+
+StripedHero.propTypes = {
+  type: PropTypes.string.isRequired,
+  els: PropTypes.array.isRequired,
+  viewing: PropTypes.string,
+};
 
 export default StripedHero;

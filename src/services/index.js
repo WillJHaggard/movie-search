@@ -4,7 +4,8 @@ import { fork, all } from "redux-saga/effects";
 // all sagas
 import allSagas from "./sagas";
 // individual reducers
-import search from "./search/reducer";
+import gallery from "./gallery/reducer";
+import details from "./details/reducer";
 
 export function* rootSaga() {
   yield all(allSagas.map(fork));
@@ -12,5 +13,6 @@ export function* rootSaga() {
 
 export const rootReducer = combineReducers({
   router: routerReducer,
-  search,
+  gallery,
+  details,
 });

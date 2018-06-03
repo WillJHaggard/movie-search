@@ -8,13 +8,13 @@ import {
   getItems,
   getViewing,
   getFeedback,
-} from "../../services/search/selectors";
+} from "../../services/gallery/selectors";
 import {
   clearResults,
   selectItem,
   handleSubmit,
   cancelSearch,
-} from "../../services/search/actions";
+} from "../../services/gallery/actions";
 import {
   Form,
   LoaderBar,
@@ -37,7 +37,10 @@ class Search extends Component {
   render() {
     return (
       <main>
-        <StripedHero els={[1, 2, 3, 4, 5, 6]} />
+        <StripedHero
+          type="search"
+          els={[1, 2, 3, 4, 5, 6]}
+        />
         <Form
           {...this.props}
           clearQuery={this.clearQuery}

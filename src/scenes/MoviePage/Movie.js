@@ -10,6 +10,7 @@ class Movie extends Component {
         <StripedHero
           viewing={this.props.viewing}
           els={[1, 2]}
+          type="movie"
         />
         <Showcase {...this.props} />
       </main>

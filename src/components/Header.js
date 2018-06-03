@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import * as Animated from "animated/lib/targets/react-dom";
+import NavigationLink from "./NavigationLink";
 
 const Header = ({
-  viewing,
+  location: { pathname },
   goBackStyle = {},
   content: { title },
 }) => (
@@ -18,7 +19,7 @@ const Header = ({
       <h1
         style={{
           color: `${
-            viewing === "movie" ? "#3a3a3a" : "white"
+            pathname !== "/" ? "#3a3a3a" : "white"
           }`,
           position: "absolute",
           top: 5,
@@ -29,20 +30,18 @@ const Header = ({
           zIndex: 100,
         }}
       >
-        <Link
+        <NavigationLink
           to={"/"}
-          style={{
-            color: "inherit",
-            textDecoration: "inherit",
-          }}
-        >
-          <Animated.span style={goBackStyle}>
-            {title}
-          </Animated.span>
-        </Link>
+          route={pathname}
+          text={
+            <Animated.span style={goBackStyle}>
+              {title}
+            </Animated.span>
+          }
+        />
       </h1>
     </nav>
   </div>
 );
 
-export default Header;
+export default withRouter(Header);

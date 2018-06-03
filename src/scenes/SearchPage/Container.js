@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./Search";
 import { Header, Footer } from "../../components";
-import "./SearchPage.css";
+import "./SearchPage.scss";
 
 const SearchPage = () => (
   <div>

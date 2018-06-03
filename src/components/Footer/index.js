@@ -1,5 +1,8 @@
 import React from "react";
-import smoothScroll from "../utils/smoothScroll";
+import smoothScroll from "../../utils/smoothScroll";
+import Styles from "./footer.scss";
+
+console.log(Styles);
 
 const Footer = ({ content: { subtitle, title } }) => (
   <footer className="ui-footer">

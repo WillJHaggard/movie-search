@@ -14,7 +14,7 @@ import SearchPage from "./scenes/SearchPage/Container";
 import MoviePage from "./scenes/MoviePage/Container";
 // CSS
 import "sanitize.css/sanitize.css";
-import "./index.css";
+import "./index.scss";
 
 // cache root
 const atTarget = document.querySelector("#root");

@@ -5,8 +5,8 @@ import TransitionGroup from "react-transition-group/TransitionGroup";
 import * as Animated from "animated/lib/targets/react-dom";
 import { bindActionCreators } from "redux";
 import { Image } from "../../components";
-import { requestItemDetails } from "../../services/search/actions";
-import { getItems } from "../../services/search/selectors";
+import { requestDetails } from "../../services/details/actions";
+import { getItems } from "../../services/gallery/selectors";
 
 class AnimatedItems extends Component {
   state = {
@@ -87,7 +87,7 @@ class AnimatedItems extends Component {
                 <button
                   className="f6 ui-button-select"
                   onClick={() =>
-                    this.props.requestItemDetails(item)
+                    this.props.requestDetails(item)
                   }
                 >
                   View
@@ -120,7 +120,7 @@ const mapStateToProps = (state, props) => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      requestItemDetails,
+      requestDetails,
     },
     dispatch
   );

@@ -366,7 +366,7 @@ main {
   display: block;
 }
 
-main header .stripes {
+main header .search-stripes {
   top: 0;
   grid: repeat(5, 200px) / repeat(10, 1fr);
   transform-origin: 0;
@@ -379,7 +379,7 @@ main header .stripes {
   );
 }
 
-main header .stripes[data-state="movie"] {
+main header .movie-stripes {
   top: 0;
   grid: repeat(5, 200px) / repeat(10, 1fr);
   transform-origin: 0;
@@ -391,7 +391,7 @@ main header .stripes[data-state="movie"] {
   );
 }
 
-main .stripes {
+main .search-stripes {
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -399,7 +399,7 @@ main .stripes {
   transform: skewY(-12deg);
 }
 
-main .stripes[data-state="movie"] {
+main .movie-stripes {
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -407,7 +407,7 @@ main .stripes[data-state="movie"] {
   transform: skewY(-12deg);
 }
 
-main header .stripes :first-child {
+main header .search-stripes :first-child {
   grid-column: span 3;
 
   background: linear-gradient(
@@ -418,7 +418,7 @@ main header .stripes :first-child {
   );
 }
 
-main header .stripes :first-child[data-state="movie"] {
+main header .movie-stripes :first-child {
   grid-column: span 3;
   background: linear-gradient(
     90deg,
@@ -426,38 +426,38 @@ main header .stripes :first-child[data-state="movie"] {
     rgba(250, 175, 82, 0.25)
   );
 }
-main header .stripes :nth-child(2) {
+main header .search-stripes :nth-child(2) {
   grid-area: 3 / span 3 / auto/-1;
 }
 
-main header .stripes :nth-child(2)[data-state="movie"] {
+main header .movie-stripes :nth-child(2) {
   grid-area: 3 / span 3 / auto/-1;
 }
 
-main header .stripes :nth-child(3) {
+main header .search-stripes :nth-child(3) {
   grid-row: 4;
   grid-column: span 5;
 }
 
-main header .stripes :nth-child(3)[data-state="movie"] {
+main header .movie-stripes :nth-child(3) {
   grid-row: 4;
   grid-column: span 5;
 }
 
-main header .stripes :nth-child(4) {
+main header .search-stripes :nth-child(4) {
   grid-area: 4 / span 5 / auto/-1;
 }
 
-main header .stripes :nth-child(4)[data-state="movie"] {
+main header .movie-stripes :nth-child(4) {
   grid-area: 4 / span 5 / auto/-1;
 }
 
-main header .stripes :nth-child(5) {
+main header .search-stripes :nth-child(5) {
   grid-area: auto/1/-1/-1;
   background: linear-gradient(100grad, #fff 80%, #f5fafd);
 }
 
-main header .stripes :nth-child(5)[data-state="movie"] {
+main header .movie-stripes :nth-child(5) {
   grid-area: auto/1/-1/-1;
   background: linear-gradient(
     90deg,
@@ -467,7 +467,7 @@ main header .stripes :nth-child(5)[data-state="movie"] {
 }
 
 @media (min-width: 670px) {
-  main header .stripes :nth-child(2) {
+  main header .search-stripes :nth-child(2) {
     background: linear-gradient(
       100grad,
       rgba(0, 119, 204, 0),
@@ -476,14 +476,14 @@ main header .stripes :nth-child(5)[data-state="movie"] {
     );
   }
 
-  main header .stripes :nth-child(2)[data-state="movie"] {
+  main header .movie-stripes :nth-child(2) {
     background: linear-gradient(
       90deg,
       hsla(46, 98%, 78%, 0),
       #ffda84
     );
   }
-  main header .stripes :nth-child(3) {
+  main header .search-stripes :nth-child(3) {
     background: linear-gradient(
       100grad,
       #fff 50%,
@@ -491,14 +491,14 @@ main header .stripes :nth-child(5)[data-state="movie"] {
     );
   }
 
-  main header .stripes :nth-child(3)[data-state="movie"] {
+  main header .movie-stripes :nth-child(3) {
     background: linear-gradient(
       90deg,
       hsla(46, 98%, 78%, 0),
       #ffda84
     );
   }
-  main header .stripes :nth-child(3) {
+  main header .serach-stripes :nth-child(3) {
     background: linear-gradient(
       100grad,
       #fff 50%,
@@ -506,7 +506,7 @@ main header .stripes :nth-child(5)[data-state="movie"] {
     );
   }
 
-  main header .stripes :nth-child(3)[data-state="movie"] {
+  main header .movie-stripes :nth-child(3) {
     background: linear-gradient(
       90deg,
       #ffcd68,

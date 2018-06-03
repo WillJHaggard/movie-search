@@ -8,11 +8,11 @@ import {
   Footer,
   LoaderBar,
 } from "../../components";
-import "./MoviePage.css";
+import "./MoviePage.scss";
 import {
   getItem,
   getViewing,
-} from "../../services/search/selectors";
+} from "../../services/details/selectors";
 
 class MoviePage extends Component {
   delay = 750;
@@ -61,7 +61,6 @@ class MoviePage extends Component {
       <div>
         <div style={{ minHeight: "calc(130vh - 270px)" }}>
           <Header
-            viewing={this.props.viewing}
             goBackStyle={goBackStyle}
             content={{
               title: "← Search Again",
