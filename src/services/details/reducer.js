@@ -7,7 +7,6 @@ const initialState = {
     error: "Oops, no more information is available.",
     start: "",
   },
-  lastID: "",
   item: {
     Title: null,
     Year: null,

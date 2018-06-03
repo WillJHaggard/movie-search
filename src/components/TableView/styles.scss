@@ -1,0 +1,39 @@
+.no_results_container {
+  display: table;
+  width: 100%;
+  padding-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  .content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4a4a4a;
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+
+.items {
+}
+
+.button_results {
+  cursor: default;
+  user-select: none;
+  margin-left: 40px;
+  text-align: right;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(236, 186, 122, 1);
+  margin-bottom: 10px;
+}

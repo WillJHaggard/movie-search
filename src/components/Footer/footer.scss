@@ -1,25 +1,25 @@
-.ui-footer {
+.footer {
   margin-top: 5rem;
   padding: 50px 0;
   background-color: rgb(246, 249, 252);
   border-top: 2px solid rgba(207, 215, 223, 0.25);
 }
 
-.ui-footer-container {
+.footer_container {
   margin: 0 auto;
   max-width: 95%;
   display: flex;
   align-items: center;
 }
 
-.ui-footer-copy {
+.footer_copy {
   flex: 1 0 90%;
 }
-.ui-footer-up {
+.footer_up {
   flex: 1 0 10%;
 }
 
-.ui-footer-title {
+.footer_title {
   font-weight: 400;
   font-size: 30px;
   line-height: 45px;
@@ -27,17 +27,19 @@
   margin: 0.75em 0;
 }
 
-.ui-footer-subtitle {
+.footer_subtitle {
   font-weight: 300;
   color: rgba(76, 140, 181, 1);
   display: block;
 }
 
-.ui-footer-up-arrow {
+.footer_up_arrow {
+  cursor: pointer;
   font-size: 40px;
   display: block;
+  padding: 1rem;
 }
 
-.ui-footer-up-arrow:hover {
+.footer_up_arrow:hover {
   transform: translateY(-5px);
 }

@@ -1,4 +1,4 @@
-.imdb-button {
+.imdb_button {
   margin: 10px;
   color: #3a3a3a;
   background: linear-gradient(
@@ -25,7 +25,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.ui-showcase-container {
+.showcase_container {
+  max-width: 95%;
+  margin: 0 auto;
   transition: all 0.3s cubic-bezier(0.2, 0, 0.4, 1);
   display: flex;
   justify-content: center;
@@ -34,13 +36,13 @@
   margin-bottom: 170px;
 }
 
-.ui-showcase {
+.showcase {
   display: block;
   margin-bottom: 2rem;
   margin-top: 7.225rem;
 }
 
-.ui-showcase-content {
+.showcase_content {
   flex: 1 0 50%;
   margin-right: 0rem;
   margin-left: 0;
@@ -48,7 +50,7 @@
   padding-right: 1rem;
 }
 
-.ui-showcase-title {
+.showcase_title {
   max-width: 500px;
   margin-bottom: 30px;
   font-weight: 500;
@@ -59,7 +61,7 @@
   letter-spacing: -0.01em;
 }
 
-.ui-showcase-body {
+.showcase_body {
   font-weight: 400;
   margin-bottom: 30px;
   font-size: 19px;
@@ -67,7 +69,7 @@
   color: #3a3a3a;
 }
 
-.floating-poster {
+.floating_poster {
   flex: 1 0 50%;
   cursor: default;
   user-select: none;
@@ -89,11 +91,11 @@
     -6.2px 37.5px 75px -37.5px rgba(0, 0, 0, 0.3);
 }
 @media (min-width: 670px) {
-  .ui-showcase-title {
+  .showcase_title {
     font-size: 50px;
     line-height: 60px;
   }
-  .ui-showcase {
+  .showcase {
     display: flex;
   }
 }
@@ -108,7 +110,7 @@
   box-shadow: -17.1px 62.5px 125px -23px rgba(50, 50, 93, 0.5),
     -6.2px 37.5px 75px -37.5px rgba(0, 0, 0, 0.3);
 }
-.deep-shadow {
+.deep_shadow {
   box-shadow: -17.1px 62.5px 125px -23px rgba(50, 50, 93, 0.5),
     -6.2px 37.5px 75px -37.5px rgba(0, 0, 0, 0.3);
 }

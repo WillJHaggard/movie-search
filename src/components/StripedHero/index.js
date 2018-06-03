@@ -1,16 +1,19 @@
 import React from "react";
 import * as PropTypes from "prop-types";
+import styles from "./styles.scss";
 
 const StripedHero = ({ type, els, viewing }) => (
   <header>
     <div
       className={
         type === "search"
-          ? "search-stripes"
-          : "movie-stripes"
+          ? styles.search_stripes
+          : styles.movie_stripes
       }
     >
-      {els.map((_, i) => <span key={`0.${i}`} />)}
+      {els.map((_, i) => (
+        <span className={styles[`s${_}`]} key={`0.${i}`} />
+      ))}
     </div>
   </header>
 );

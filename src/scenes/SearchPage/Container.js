@@ -1,11 +1,10 @@
 import React from "react";
-import Search from "./Search";
+import Search from "../../containers/Search";
 import { Header, Footer } from "../../components";
-import "./SearchPage.scss";
 
 const SearchPage = () => (
   <div>
-    <div style={{ minHeight: "calc(130vh - 270px)" }}>
+    <div style={{ minHeight: "calc(100vh - 1rem)" }}>
       <Header
         content={{
           title: "Movie Search",

@@ -1,0 +1,40 @@
+import React from "react";
+import Image from "../../containers/Image";
+import styles from "./styles.scss";
+
+const Showcase = ({
+  item: {
+    Poster: src = "",
+    Title: title,
+    Year: year,
+    imdbID: id,
+    Runtime: runtime = "",
+  },
+}) => (
+  <div className={styles.showcase_container}>
+    <div className={styles.showcase}>
+      <figure className="floating-poster">
+        <Image
+          className={styles.poster}
+          src={src}
+          alt={`${title} ${year}`}
+        />
+      </figure>
+      <div className={styles.showcase_content}>
+        <h1 className={styles.showcase_title}>{title}</h1>
+        <p className={styles.showcase_body}>Year: {year}</p>
+        <p className={styles.showcase_body}>
+          Runtime: {runtime}
+        </p>
+        <a
+          href={`https://imdb.com/title/${id}`}
+          className={styles.imdb_button}
+        >
+          Visit IMDB
+        </a>
+      </div>
+    </div>
+  </div>
+);
+
+export default Showcase;

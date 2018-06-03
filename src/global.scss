@@ -1,0 +1,49 @@
+:global {
+  *,
+  *:before,
+  *:after {
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    font-size: 100%;
+  }
+
+  body {
+    background: #fff;
+    font-family: "Avenir Next", "Segoe UI", Helvetica,
+      sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 1.6em;
+  }
+
+  main {
+    position: relative;
+    display: block;
+  }
+
+  input,
+  select,
+  textarea {
+    color: #4a4a4a;
+    font-family: inherit;
+  }
+
+  button:disabled {
+    opacity: 0.5;
+  }
+}

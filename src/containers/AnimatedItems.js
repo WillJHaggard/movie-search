@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import * as Animated from "animated/lib/targets/react-dom";
 import { bindActionCreators } from "redux";
-import { Image } from "../../components";
-import { requestDetails } from "../../services/details/actions";
-import { getItems } from "../../services/gallery/selectors";
+import { Image, TableItem } from "../components";
+import { requestDetails } from "../services/details/actions";
+import { getItems } from "../services/gallery/selectors";
 
 class AnimatedItems extends Component {
   state = {
@@ -59,43 +59,14 @@ class AnimatedItems extends Component {
     };
     return (
       <Animated.div style={style}>
-        <article
-          className="dt w-100 bb b--black-05 pb2 mt2"
-          key={`0.${i}`}
-        >
-          <div className="dtc w2 w3-ns v-mid">
-            <Image
-              src={item.Poster}
-              className="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"
-              alt={`${item.Title}`}
-            />
-          </div>
-          <div className="dtc v-mid pl3">
-            <h1 className="f6 f5-ns fw6 lh-title black mv0">
-              {item.Title}{" "}
-            </h1>
-            <h2 className="f6 fw4 mt0 mb0 black-60">
-              {item.Year}
-            </h2>
-          </div>
-          <div className="dtc v-mid">
-            <div className="w-100 tr">
-              <Link
-                style={{ cursor: "default" }}
-                to={`/movie/${item.imdbID}`}
-              >
-                <button
-                  className="f6 ui-button-select"
-                  onClick={() =>
-                    this.props.requestDetails(item)
-                  }
-                >
-                  View
-                </button>
-              </Link>
-            </div>
-          </div>
-        </article>
+        <TableItem
+          index={i}
+          item={item}
+          displayText="View"
+          requestDetails={() =>
+            this.props.requestDetails(item)
+          }
+        />
       </Animated.div>
     );
   };

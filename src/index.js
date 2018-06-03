@@ -8,13 +8,13 @@ import { ConnectedRouter } from "react-router-redux";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 // Internal Deps
 import store, { history } from "./store";
-import { AnimatedSwitch } from "./components";
+import AnimatedSwitch from "./containers/AnimatedSwitch";
 import TopOf from "./utils/TopOf";
 import SearchPage from "./scenes/SearchPage/Container";
 import MoviePage from "./scenes/MoviePage/Container";
 // CSS
 import "sanitize.css/sanitize.css";
-import "./index.scss";
+import "./global.scss";
 
 // cache root
 const atTarget = document.querySelector("#root");

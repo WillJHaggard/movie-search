@@ -1,0 +1,15 @@
+.header_container {
+  padding: 0;
+  max-width: 95%;
+  margin: 0 auto;
+
+  nav .header_display {
+    position: absolute;
+    top: 5;
+    left: 0;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    z-index: 100;
+  }
+}

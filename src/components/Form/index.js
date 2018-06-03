@@ -1,5 +1,6 @@
 import React from "react";
-import LoaderBar from "./LoaderBar";
+import LoaderBar from "../LoaderBar";
+import styles from "./styles.scss";
 
 const Form = ({
   controlledQuery: query,
@@ -7,31 +8,34 @@ const Form = ({
   viewing,
   feedback,
   handleSubmit,
-  clearResults,
   clearQuery,
+  clearResults,
   cancelSearch,
 }) => (
-  <div className="ui-form-container">
+  <div className={styles.form_container}>
     <form
-      className="ui-form"
+      className={styles.form}
       onSubmit={e => handleSubmit(e, query)}
     >
-      <div className="ui-button-clear-container">
+      <div className={styles.button_clear_container}>
         <span
           tabIndex="1"
-          onClick={() =>
-            Boolean(query.length) ? clearQuery() : null
-          }
-          className="ui-button-clear"
+          onClick={() => {
+            if (Boolean(query.length)) {
+              clearQuery();
+            }
+            clearResults();
+          }}
+          className={styles.button_clear}
         >
-          Clear
+          Clear Results
         </span>
       </div>
       <div className="">
         <input
           tabIndex="2"
           type="search"
-          className="ui-input"
+          className={styles.input}
           value={query}
           onChange={handleChangeQuery}
           placeholder="Search Title..."
@@ -39,10 +43,10 @@ const Form = ({
         />
         {viewing === "loading" && <LoaderBar />}
       </div>
-      <div className="ui-buttons">
+      <div className={styles.buttons}>
         <button
           tabIndex="3"
-          className="ui-button"
+          className={styles.button}
           disabled={viewing === "loading"}
         >
           {feedback[viewing] || "Search"}
@@ -50,7 +54,7 @@ const Form = ({
         {viewing === "loading" && (
           <button
             tabIndex="4"
-            className="ui-button"
+            className={styles.button}
             type="button"
             onClick={cancelSearch}
           >

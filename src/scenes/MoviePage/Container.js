@@ -2,17 +2,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as PropTypes from "prop-types";
 import * as Animated from "animated/lib/targets/react-dom";
-import Movie from "./Movie";
+
 import {
   Header,
   Footer,
   LoaderBar,
+  StripedHero,
+  Showcase,
 } from "../../components";
-import "./MoviePage.scss";
-import {
-  getItem,
-  getViewing,
-} from "../../services/details/selectors";
+import { getItem } from "../../services/details/selectors";
+import { getViewing } from "../../services/gallery/selectors";
 
 class MoviePage extends Component {
   delay = 750;
@@ -59,14 +58,21 @@ class MoviePage extends Component {
     };
     return (
       <div>
-        <div style={{ minHeight: "calc(130vh - 270px)" }}>
+        <div style={{ minHeight: "calc(100vh - 1rem)" }}>
           <Header
             goBackStyle={goBackStyle}
             content={{
               title: "← Search Again",
             }}
           />
-          <Movie {...this.props} />
+          <main>
+            <StripedHero
+              viewing={this.props.viewing}
+              els={[1, 2]}
+              type="movie"
+            />
+            <Showcase {...this.props} />
+          </main>
         </div>
         <div>
           <Footer

@@ -1,23 +1,21 @@
 import React from "react";
 import smoothScroll from "../../utils/smoothScroll";
-import Styles from "./footer.scss";
-
-console.log(Styles);
+import styles from "./footer.scss";
 
 const Footer = ({ content: { subtitle, title } }) => (
-  <footer className="ui-footer">
-    <div className="ui-footer-container">
-      <div className="ui-footer-copy">
-        <h1 className="ui-footer-title">
-          <span className="ui-footer-subtitle">
+  <footer className={styles.footer}>
+    <div className={styles.footer_container}>
+      <div className={styles.footer_copy}>
+        <h1 className={styles.footer_title}>
+          <span className={styles.footer_subtitle}>
             {subtitle}
           </span>
           {title}
         </h1>
       </div>
-      <div className="ui-footer-up">
+      <div className={styles.footer_up}>
         <span
-          className="ui-footer-up-arrow"
+          className={styles.footer_up_arrow}
           onClick={() => smoothScroll()}
         >
           &#8593;

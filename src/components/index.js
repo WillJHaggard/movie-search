@@ -1,22 +1,20 @@
-import AnimatedSwitch from "./AnimatedSwitch";
 import Footer from "./Footer/index.js";
-import Form from "./Form";
-import Header from "./Header";
-import Image from "./Image";
-import LoaderBar from "./LoaderBar";
-import NavigationLink from "./NavigationLink";
-import TableView from "./TableView";
-import Showcase from "./Showcase";
-import StripedHero from "./StripedHero";
+import Form from "./Form/index.js";
+import Header from "./Header/index.js";
+import LoaderBar from "./LoaderBar/index.js";
+import NavigationLink from "./NavigationLink/index.js";
+import TableItem from "./TableItem/index.js";
+import TableView from "./TableView/index.js";
+import Showcase from "./Showcase/index.js";
+import StripedHero from "./StripedHero/index.js";
 
 export {
-  AnimatedSwitch,
   Footer,
   Form,
   Header,
-  Image,
   LoaderBar,
   NavigationLink,
+  TableItem,
   TableView,
   Showcase,
   StripedHero,

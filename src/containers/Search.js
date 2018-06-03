@@ -8,19 +8,19 @@ import {
   getItems,
   getViewing,
   getFeedback,
-} from "../../services/gallery/selectors";
+} from "../services/gallery/selectors";
 import {
   clearResults,
   selectItem,
   handleSubmit,
   cancelSearch,
-} from "../../services/gallery/actions";
+} from "../services/gallery/actions";
 import {
   Form,
   LoaderBar,
   TableView,
   StripedHero,
-} from "../../components";
+} from "../components";
 
 class Search extends Component {
   /**

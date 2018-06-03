@@ -1,6 +1,6 @@
 import React, { Children } from "react";
-import AnimatedItems from "../scenes/SearchPage/AnimatedItems";
-//import no_available_poster from "../../no_available_poster.svg";
+import AnimatedItems from "../../containers/AnimatedItems";
+import styles from "./styles.scss";
 
 const TableView = ({
   feedback,
@@ -14,27 +14,19 @@ const TableView = ({
       maxWidth: "52rem",
       margin: "0 auto",
     }}
-    className="ui-items"
+    className={styles.items}
     data-state={viewing}
   >
     {viewing === "error" ? (
-      <article
-        className="dt w-100 bb b--black-05 pb2 mt2"
-        href="#0"
-      >
-        <div className="dtc v-mid">
-          <h1
-            className="f6 f5-ns fw6 lh-title black mv0"
-            style={{ textAlign: "center" }}
-          >
-            No Results
-          </h1>
+      <article className={styles.no_results_container}>
+        <div className={styles.content}>
+          <h1 className={styles.title}>No Results</h1>
         </div>
       </article>
     ) : (
       viewing === "gallery" && (
         <div>
-          <span className="ui-button-results">
+          <span className={styles.button_results}>
             {items.length > 1
               ? `${items.length} Results`
               : `${items.length} Result`}
