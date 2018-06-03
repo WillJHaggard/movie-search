@@ -1,3 +1,6 @@
+/**
+  simple smooth scroll for canonical back-to-top arrow
+*/
 const smoothScroll = () => {
   var currentScroll =
     document.documentElement.scrollTop ||

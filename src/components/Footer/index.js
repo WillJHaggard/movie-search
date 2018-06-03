@@ -1,8 +1,13 @@
+// External Deps
 import React from "react";
 import * as PropTypes from "prop-types";
+// Internal Deps
 import smoothScroll from "../../utils/smoothScroll";
 import styles from "./footer.scss";
 
+/**
+  Simple component that pushes user to the top of the document by clicking the arrow
+*/
 const Footer = ({ content: { subtitle, title } }) => (
   <footer className={styles.footer}>
     <div className={styles.footer_container}>
@@ -27,6 +32,7 @@ const Footer = ({ content: { subtitle, title } }) => (
 );
 
 Footer.propTypes = {
+  // content object is used to place text from scene container
   content: PropTypes.shape({
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,

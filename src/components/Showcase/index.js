@@ -1,8 +1,14 @@
+// Extenral Deps
 import React from "react";
 import * as PropTypes from "prop-types";
+// Intenral Deps
 import Image from "../../containers/Image";
 import styles from "./styles.scss";
 
+/**
+  Shows assigned item that is comprised of shallow information from state.gallery.items
+  and deeper information from state.details.item
+*/
 const Showcase = ({
   item: {
     Poster: src,
@@ -49,6 +55,7 @@ Showcase.defaultProps = {
 };
 
 Showcase.propTypes = {
+  // item is larger than this from api, but for rendering it requires this shape at least
   item: PropTypes.shape({
     Poster: PropTypes.string.isRequired,
     Title: PropTypes.string.isRequired,

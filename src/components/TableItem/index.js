@@ -1,10 +1,15 @@
+// Extenral Deps
 import React from "react";
 import * as PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
+// Intenral Deps
 import { NavigationLink } from "../index";
 import Image from "../../containers/Image";
 import styles from "./styles.scss";
 
+/**
+  Individual item component that is mapped over with state.gallery.items
+*/
 const TableItem = ({
   location: { pathname },
   item,
@@ -58,17 +63,22 @@ TableItem.defaultProps = {
 };
 
 TableItem.propTypes = {
+  // router props for NavigationLink
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
+  // Similar to Showcase, but displays shallow information in a list
   item: PropTypes.shape({
     Poster: PropTypes.string.isRequired,
     Title: PropTypes.string.isRequired,
     Year: PropTypes.string.isRequired,
     imdbID: PropTypes.string.isRequired,
   }),
+  // index of callback
   index: PropTypes.number.isRequired,
+  // text of button that links user to MoviePage
   displayText: PropTypes.string.isRequired,
+  // callback given to NavigationLink to start services/details/sagas
   requestDetails: PropTypes.func.isRequired,
 };
 

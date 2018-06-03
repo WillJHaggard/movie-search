@@ -6,6 +6,7 @@
     rgba(235, 218, 143, 1),
     rgba(242, 180, 24, 1)
   );
+  cursor: default;
   white-space: nowrap;
   display: inline-block;
   height: 40px;
@@ -19,10 +20,12 @@
   text-transform: uppercase;
   letter-spacing: 0.025em;
   text-decoration: none;
-  -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
+  &:hover {
+    transform: translateY(-1px);
+  }
 }
 
 .showcase_container {

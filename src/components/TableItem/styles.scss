@@ -1,6 +1,7 @@
 .container {
   display: table;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   border-bottom: 2px solid rgba(207, 215, 223, 0.25);
   padding-bottom: 0.5rem;
   margin-top: 0.5rem;
@@ -13,33 +14,26 @@
       text-align: right;
     }
     .button_select {
-      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
-        0 1px 3px rgba(0, 0, 0, 0.08);
-      margin: 10px;
-      margin-left: 20px;
-      color: #4a4a4a;
-      font-size: 14px;
-      background: linear-gradient(
-        90deg,
-        rgba(235, 218, 143, 1),
-        rgba(242, 180, 24, 1)
-      );
       white-space: nowrap;
       display: inline-block;
       height: 40px;
       line-height: 40px;
-      padding: 0 2rem;
-      border-radius: 6px;
+      padding: 0 14px;
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+      background: #fff;
+      border-radius: 4px;
+      font-size: 15px;
       font-weight: 500;
-      font-size: 0.875rem;
       text-transform: uppercase;
       letter-spacing: 0.025em;
+      color: rgba(76, 140, 181, 1);
       text-decoration: none;
       transition: all 0.15s ease;
     }
 
     .button_select:hover {
-      transform: translateY(-0.75px);
+      transform: translateY(-1.75px);
     }
   }
 

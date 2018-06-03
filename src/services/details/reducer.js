@@ -8,11 +8,12 @@ const initialState = {
     start: "",
   },
   item: {
-    Title: null,
-    Year: null,
-    imdbID: null,
+    Title: "",
+    Year: "",
+    imdbID: "",
     Type: "movie",
     Poster: "",
+    Runtime: "",
   },
   error: null,
 };

@@ -1,17 +1,24 @@
+// Extenral Deps
 import React from "react";
 import * as PropTypes from "prop-types";
 import { Switch } from "react-router-dom";
 import * as Animated from "animated/lib/targets/react-dom";
 
+/**
+  Class that extends Switch to hook into ReactTransitionGroup's cycle events
+  for routes in react-router
+
+  Normally, there is no need for extended hierarchies in React by way of composition.
+  This is a one-off case for animating lifecycle methods.
+*/
 class AnimatedSwitch extends Switch {
   static propTypes = {
+    // location given from render prop of Route component at Root
     location: PropTypes.object.isRequired,
-    key: PropTypes.number.isRequired,
   };
 
   static defaultProps = {
     location: {},
-    key: 0,
   };
 
   constructor(props) {

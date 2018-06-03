@@ -1,14 +1,32 @@
+// Extenral Deps
 import React, { Component } from "react";
 import * as PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import * as Animated from "animated/lib/targets/react-dom";
 import { bindActionCreators } from "redux";
+// Intenral Deps
 import { TableItem } from "../components";
 import { requestDetails } from "../services/details/actions";
 import { getItems } from "../services/gallery/selectors";
 
+/**
+  Render prop component that takes in props.items, puts them in local state, puts the same number
+  of Animated.Values in state as animations, then staggers appearance on
+  didMount and WillReceiveProps.
+*/
 class AnimatedItems extends Component {
+  static propTypes = {
+    // array of items received at state.gallery.items
+    items: PropTypes.array.isRequired,
+    // action creator that starts servies/details/sagas for more item data
+    requestDetails: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    items: [],
+  };
+
   state = {
     animations: [],
     items: [],
@@ -83,15 +101,6 @@ class AnimatedItems extends Component {
     );
   }
 }
-
-AnimatedItems.defaultProps = {
-  items: [],
-};
-
-AnimatedItems.propTypes = {
-  items: PropTypes.array.isRequired,
-  requestDetails: PropTypes.func.isRequired,
-};
 
 const mapStateToProps = (state, props) => ({
   items: getItems(state),

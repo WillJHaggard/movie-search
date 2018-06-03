@@ -20,13 +20,25 @@ import {
   StripedHero,
 } from "../components";
 
+/**
+  Search component that acts as container for Form and TableView
+  Owns local controlled state that updates with each keystroke
+  Snapshot of this state is what is sent as encoded query to action creator
+  and saga
+*/
 class Search extends Component {
   static propTypes = {
+    // array of items received from search
     items: PropTypes.array.isRequired,
+    // string that is checked against feedback msgs; tells state what user is looking at
     viewing: PropTypes.string.isRequired,
+    // object of keys that match possible viewing state values for changing information
     feedback: PropTypes.object.isRequired,
+    // calls action CLEAR_RESULTS and simply clears items
     clearResults: PropTypes.func.isRequired,
+    // cancels search in progress
     cancelSearch: PropTypes.func.isRequired,
+    // calls request for items based on snapshot of local controlled state through action creator
     handleSubmit: PropTypes.func.isRequired,
   };
 

@@ -1,7 +1,24 @@
+// Extenral Deps
 import React, { Component } from "react";
 import * as PropTypes from "prop-types";
 
+/**
+  Quick and simple HOC for img tags to hook into onLoad
+  for queries that yield bad/malformed/not loaded Poster src
+*/
 class Image extends Component {
+  static propTypes = {
+    // required for img
+    src: PropTypes.string.isRequired,
+    // required for accessibility
+    alt: PropTypes.string.isRequired,
+    className: PropTypes.string,
+  };
+
+  static defaultProps = {
+    className: "",
+  };
+
   state = {
     hasLoaded: false,
   };
@@ -37,15 +54,5 @@ class Image extends Component {
     );
   }
 }
-
-Image.propTypes = {
-  src: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
-};
-
-Image.defaultProps = {
-  className: "",
-};
 
 export default Image;

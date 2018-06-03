@@ -1,29 +1,27 @@
+// External Deps
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as PropTypes from "prop-types";
 import * as Animated from "animated/lib/targets/react-dom";
-
-import {
-  Header,
-  Footer,
-  LoaderBar,
-  StripedHero,
-  Showcase,
-} from "../../components";
+// Internal Deps
 import { getItem } from "../../services/details/selectors";
-import { getViewing } from "../../services/gallery/selectors";
+import Movie from "../../containers/Movie";
+import { Header, Footer } from "../../components";
 
+/**
+  Class that manages layout, refreshes where state loses item details, and
+  animated header text
+
+  A next step would be persist redux state and/or save selected item to localStorage
+  if the user may need it on refresh
+*/
 class MoviePage extends Component {
   delay = 750;
   static contextTypes = {
+    // router to push back to '/' if no item is selected
     router: PropTypes.shape({
       history: PropTypes.object.isRequired,
     }),
-  };
-
-  static propTypes = {
-    item: PropTypes.object.isRequired,
-    viewing: PropTypes.string.isRequired,
   };
 
   state = { animate: new Animated.Value(0) };
@@ -45,7 +43,6 @@ class MoviePage extends Component {
 
   render() {
     const { animate } = this.state;
-    const { viewing } = this.props;
     let goBackStyle = {
       transform: Animated.template`
       translate3d(${animate.interpolate({
@@ -64,14 +61,7 @@ class MoviePage extends Component {
               title: "← Search Again",
             }}
           />
-          <main>
-            <StripedHero
-              viewing={this.props.viewing}
-              els={[1, 2]}
-              type="movie"
-            />
-            <Showcase {...this.props} />
-          </main>
+          <Movie />
         </div>
         <div>
           <Footer
@@ -81,15 +71,14 @@ class MoviePage extends Component {
             }}
           />
         </div>
-        {viewing === "loading" && <LoaderBar />}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state, props) => ({
+  // item from state.details.item for pushing user back if empty
   item: getItem(state),
-  viewing: getViewing(state),
 });
 
 export default connect(mapStateToProps, null)(MoviePage);
